@@ -1,19 +1,20 @@
-# Infr - Your Personal Data Streaming Server
+# Infr | Machine readable catalog of everything you.
+
+[![Discord](https://img.shields.io/discord/1138381560295460955?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://discord.gg/ZAejZCzaPe)
 
 Infr is an open-source, self-hostable, machine-readable catalog of your data. It allows you to stream your data - from location, health metrics, screen recordings, phone camera feeds, to your social media posts - to your personal server. This forms the building block for the next generation of AI applications.
 
-![Infr Logo](./assets/images/logo.png)
+![Infr Logo](./public/infr.png)
 
 ## Features
 
 - Stream data from various sources like your phone, laptop, or social media accounts to your personal server.
 - Encryption options to secure your personal data with your own key.
-- MemoryAI, our first app that allows you to search through your previously seen or read content.
+- Clean & intuitive APIs to access your data.
 - Future-proof architecture enabling the development of advanced AI applications.
-
 ## Getting Started
 
-1. Visit our website [infr.dev](https://www.infr.dev) and click the "Get Started" button.
+1. Visit our website [infr](https://www.getinfr.com) and click the "Get Started" button.
 2. Follow the on-screen instructions to set up your Infr server.
 3. Start streaming your data!
 
