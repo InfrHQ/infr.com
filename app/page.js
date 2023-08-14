@@ -4,6 +4,7 @@ import { ReactTerminal } from 'react-terminal';
 import { TerminalContextProvider } from 'react-terminal';
 import Image from 'next/image';
 import { DiscordIcon, TwitterIcon, GithubIcon } from './icons';
+import Footer from './components/footer';
 import { useState } from 'react';
 import Head from 'next/head';
 
@@ -83,6 +84,7 @@ function App() {
           />
         </TerminalContextProvider>
       </div>
+      <Footer />
     </div>
   );
 }
