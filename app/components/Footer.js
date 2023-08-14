@@ -1,5 +1,5 @@
 
-function FooterComponent() {
+function Footer() {
   return (
     <footer class="bg-balck rounded-lg shadow mt-4 ">
       <div class="w-full mx-auto max-w-screen-xl md:flex md:items-center md:justify-between p-4">
@@ -32,4 +32,4 @@ function FooterComponent() {
   );
 }
 
-export default FooterComponent;
+export default Footer;
