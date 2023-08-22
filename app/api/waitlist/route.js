@@ -7,7 +7,7 @@ export async function GET(req) {
   const email = url.searchParams.get('email');
   console.log(email);
   // Store email
-  let resp = await fetch('http://i.getinfr.com/api/email', {
+  let resp = await fetch('https://i.getinfr.com/api/email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -19,5 +19,5 @@ export async function GET(req) {
   console.log(resp);
 
   // Return a 200 response
-  return NextResponse.json({ success: 'Addded to waitlist successfully.' });
+  return NextResponse.json({ success: 'Added to waitlist successfully.' });
 }
