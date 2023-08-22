@@ -1,90 +1,34 @@
-'use client';
-
-import { ReactTerminal } from 'react-terminal';
-import { TerminalContextProvider } from 'react-terminal';
-import Image from 'next/image';
-import { DiscordIcon, TwitterIcon, GithubIcon } from './icons';
-import { useState } from 'react';
-import Head from 'next/head';
-import Footer from './components/Footer';
+import Join from '@/components/Join';
 
 function App() {
-  // Define commands here
-  const [conversation, setConversation] = useState([]);
-
-  const welcomeMessage = (
-    <div>
-      <Image src="/infr.png" width="100" height="100" />
-      <h1 className="text-3xl font-bold">Welcome to Infr.</h1>
-
-      <h2 className="text-xl font-bold">
-        An open-source, machine-readable catalog of everything about you.
-      </h2>
-      <div className="flex  items-center mt-2 mb-2 ">
-        <h1 className="text-m mr-3">Find us on</h1>
-        <div className="flex space-x-2">
-          <DiscordIcon className="h-6 w-6" />
-          <GithubIcon className="h-6 w-6" />
-          <TwitterIcon className="h-6 w-6" />
-        </div>
-      </div>
-      <p>Ask away, what do you want to know?</p>
-      <br></br>
-    </div>
-  );
-
-  async function defaultHandler(command, other) {
-    try {
-      // Add the user's message to the conversation
-
-      let text = command + ' ' + other;
-
-      let resp = await fetch(
-        `/api?text=${encodeURIComponent(
-          JSON.stringify([...conversation, { role: 'user', content: text }])
-        )}`
-      );
-      let data = await resp.json();
-      let message = data.message;
-
-      // Add the bot's & users response to the conversation
-      setConversation([
-        ...conversation,
-        { role: 'user', content: text },
-        message,
-      ]);
-
-      return message?.content;
-    } catch (e) {
-      console.log(e);
-      return "Sorry, I don't understand. Try 'help' for a list of commands.";
-    }
-  }
-
   return (
     <div>
-      <Head>
-        <title>Infr - An open-source, machine-readable catalog of you</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta
-          name="description"
-          content="Infr allows you to stream your data including your location, health data, screen recordings, social media posts, and more to your personal, self-hosted server. It's completely open-source and empowers the development of advanced AI applications."
-        />
-        <meta
-          name="keywords"
-          content="Infr, open-source, self-hosted, personal data, AI, Machine-readable catalog, MemoryAI, data streaming, Jarvis, JOI, Blade Runner 2049"
-        />
-      </Head>
+      <section>
+        <div className="relative z-0 mx-auto max-w-3xl pb-24 pt-12 text-center absolute h-full w-full">
+          <div className="absolute -top-4 -z-10 flex w-full justify-center">
+            <div className="absolute w-screen h-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:18px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+            <div className="h-[310px] w-[310px] max-w-full animate-pulse-slow rounded-full bg-[#8678F9] opacity-20 blur-[100px]" />
+          </div>
+          <div>
+            <h1 className="mb-8 font-semi-bold bg-gradient-to-t from-[#6d6d6d] to-[#f4f4f4] bg-clip-text text-4xl text-transparent md:text-5xl">
+              A machine readable catalog of everything you&apos;ve ever seen,
+              heard or done.
+            </h1>
+            <p className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-xl text-transparent">
+              Open-source. Unbreakable encryption. Perpetual storage.
+            </p>
 
-      <div className="h-full w-full bg-gray-900 h-screen">
-        <TerminalContextProvider>
-          <ReactTerminal
-            welcomeMessage={welcomeMessage}
-            defaultHandler={defaultHandler}
-          />
-        </TerminalContextProvider>
-      </div>
-      <Footer />
+            <span className="relative inline-block overflow-hidden rounded-full p-[1px] mt-3">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <div className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950/90 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                Alpha live. Cyberpunk revolution is here.
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <Join />
+      </section>
     </div>
   );
 }

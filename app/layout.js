@@ -2,12 +2,15 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'] });
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 export const metadata = {
   title: 'Infr',
   description: 'Machine readable catalog of everything about you.',
 };
-const GTM_ID=process.env.GTM_ID;
+
+const GTM_ID = process.env.GTM_ID;
 
 export default function RootLayout({ children }) {
   return (
@@ -20,8 +23,16 @@ export default function RootLayout({ children }) {
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','${GTM_ID}');
         `}
-    </Script>
-      <body className={inter.className}>{children}</body>
+      </Script>
+      <body className={inter.className} suppressHydrationWarning={true}>
+        <div className="bg-black">
+          <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-4">
+            <Header />
+            <main className="flex-1">{children}</main>
+          </div>
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }
