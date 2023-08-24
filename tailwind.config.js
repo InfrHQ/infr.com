@@ -13,7 +13,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
-        "background-shine": "background-shine 2s linear infinite"
+        "background-shine": "background-shine 2s linear infinite",
+        "text-gradient": "text-gradient 1.5s linear infinite"
       },
       keyframes: {
         "background-shine": {
@@ -22,6 +23,11 @@ module.exports = {
           },
           "to": {
             "backgroundPosition": "-200% 0"
+          }
+        },
+        "text-gradient": {
+          "to": {
+            "backgroundPosition": "200% center"
           }
         }
       }
