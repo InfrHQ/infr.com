@@ -8,7 +8,8 @@ import {
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-8">
+    <div className="item-center px-10">
+    <header className="flex  items-center justify-between py-8">
       <Link href="https://getinfr.com">
         <Image
           src="/infr-logo.svg"
@@ -19,7 +20,7 @@ const Header = () => {
         />
       </Link>
       <nav className="flex gap-6 items-center">
-        
+
         <a
           href="https://twitter.com/infrhq"
           target="_blank"
@@ -46,6 +47,7 @@ const Header = () => {
         </a>
       </nav>
     </header>
+    </div>
   );
 };
 

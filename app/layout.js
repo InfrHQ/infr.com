@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       </Script>
       <body className={inter.className} suppressHydrationWarning={true}>
         <div className="bg-black">
-          <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-4">
+          <div className="mx-auto flex min-h-screen flex-col px-4">
             <Header />
             <main className="flex-1">{children}</main>
           </div>
