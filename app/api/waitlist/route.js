@@ -5,9 +5,9 @@ export async function GET(req) {
 
   // Get the user's email for the waitlist
   const email = url.searchParams.get('email');
-  console.log(email);
+  
   // Store email
-  let resp = await fetch('https://i.getinfr.com/api/email', {
+  await fetch('https://i.getinfr.com/api/join', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -15,8 +15,6 @@ export async function GET(req) {
     },
     body: JSON.stringify({ template_data: { email_id: email } }),
   });
-
-  console.log(resp);
 
   // Return a 200 response
   return NextResponse.json({ success: 'Added to waitlist successfully.' });

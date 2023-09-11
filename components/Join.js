@@ -27,7 +27,7 @@ const Loader = () => {
 function Join() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [btnText, setBtnText] = useState('Join Waitlist');
+  const [btnText, setBtnText] = useState('Launch Server');
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {

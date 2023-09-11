@@ -5,6 +5,7 @@ import {
   GitHubLogoIcon,
   TwitterLogoIcon,
   DownloadIcon,
+  RocketIcon,
 } from '@radix-ui/react-icons';
 
 const Header = () => {
@@ -22,7 +23,15 @@ const Header = () => {
         </Link>
 
         <nav className="flex gap-6 items-center">
-          <a href="/download" className="inline-flex ">
+          <a
+            href="https://server.getinfr.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex "
+          >
+            <RocketIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-white"  />
+          </a>
+          <a href="/download" className="inline-flex mr-7">
             <DownloadIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-white" />
           </a>
           <a
@@ -50,7 +59,6 @@ const Header = () => {
             <DiscordLogoIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-white" />
           </a>
         </nav>
-        
       </header>
     </div>
   );
