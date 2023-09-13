@@ -16,7 +16,7 @@ function DesktopDownloadCard() {
         <div>
           <a
             className="relative inline-block overflow-hidden rounded-full p-[1px] mt-3 w-full flex "
-            href="https://github.com/InfrHQ/desktop-client/releases/download/v1.0.2-alpha/Infr-1.0.2-arm64.dmg"
+            href="https://github.com/InfrHQ/desktop-client/releases/latest/download/infr-macos-arm64.dmg"
             download
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
@@ -36,7 +36,7 @@ function DesktopDownloadCard() {
         <div>
           <a
             className="relative inline-block overflow-hidden rounded-full p-[1px] mt-3 w-full flex "
-            href="https://github.com/InfrHQ/desktop-client/releases/download/v1.0.2-alpha/Infr-1.0.2-x64.dmg"
+            href="https://github.com/InfrHQ/desktop-client/releases/latest/download/infr-macos-x64.dmg"
             download
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
