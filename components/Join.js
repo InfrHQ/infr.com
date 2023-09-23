@@ -27,7 +27,7 @@ const Loader = () => {
 function Join() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [btnText, setBtnText] = useState('Launch Server');
+  const [btnText, setBtnText] = useState('Join');
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -39,10 +39,10 @@ function Join() {
     }
 
     setLoading(true);
-    const res = await fetch('/api/waitlist?email=' + email);
+    //const res = await fetch('/api/waitlist?email=' + email);
+    // Wiat for 5 seconds
+    await new Promise((resolve) => setTimeout(resolve, 5000));
     setLoading(false);
-    const data = await res.json();
-    console.log(data);
     setBtnText('You are in. Welcome to the future.');
     setEmail('');
     setSuccess(true);
@@ -52,7 +52,7 @@ function Join() {
     <div className="flex align-center items-center justify-center ">
       {!success && (
         <input
-          className="mr-2 border-1 block h-12 w-1/2 rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border px-3 py-2 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
+          className="mr-2 border-1 block h-12 w-1/2 rounded-md border border-double border-slate-800 border-transparent bg-origin-border px-3 py-2 text-slate-500 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:outline-none"
           placeholder="Enter your email"
           type="email"
           value={email}
@@ -61,7 +61,7 @@ function Join() {
       )}
       <button
         className={
-          'transition-background inline-flex h-12 items-center justify-center rounded-md border border-slate-800 bg-gradient-to-r from-slate-100 via-[#c7d2fe] to-[#8678f9] bg-[length:200%_200%] bg-[0%_0%] px-6 font-medium text-black duration-500 hover:bg-[100%_200%] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50' +
+          'transition-background inline-flex h-12 items-center justify-center rounded-md bg-gradient-to-r from-slate-100 via-[#c7d2fe] to-[#8678f9] bg-[length:200%_200%] bg-[0%_0%] px-6 font-medium text-black duration-500 hover:bg-[100%_200%] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50' +
           (loading ? ' opacity-50 cursor-not-allowed' : '')
         }
         onClick={handleSubmit}

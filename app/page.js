@@ -1,6 +1,7 @@
 import Join from '@/components/Join';
 import Video from '@/components/LandingVideo';
 import { LightningBoltIcon, LockClosedIcon, HeartIcon, ResumeIcon, StopwatchIcon, MagicWandIcon } from '@radix-ui/react-icons';
+
 function App() {
   return (
     <div>
@@ -11,27 +12,29 @@ function App() {
             <div className="h-[310px] w-[310px] max-w-full animate-pulse-slow rounded-full bg-[#8678F9] opacity-20 blur-[100px]" />
           </div>
           <div>
-            <h1 className="mb-4 font-semi-bold bg-gradient-to-t from-[#6d6d6d] to-[#f4f4f4] bg-clip-text text-4xl text-transparent md:text-5xl">
+            <h1 className="mb-4 font-bold bg-gradient-to-t from-[#6d6d6d] to-[#f4f4f4] bg-clip-text text-4xl text-black-500 md:text-5xl dark:text-transparent">
               A database for memories
             </h1>
           </div>
-          <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-xl text-transparent">
-            Store, analyse &amp; query everything you&apos;ve ever seen, heard
+          <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-xl text-slate-500 dark:text-transparent">
+            Remember everything you&apos;ve ever seen, heard
             or said.
           </span>
+          <div>
           <span className="relative inline-block overflow-hidden rounded-full p-[1px] mt-3">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
             <div className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950/90 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
               No credit card required. Join now!
             </div>
           </span>
+          </div>
         </div>
 
         <Join />
 
         <div className="relative z-0 mx-auto max-w-3xl pb-12 pt-6 text-center absolute h-full w-full">
-          <p className="inline-flex  bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-xl text-transparent">
-            Open-source. Unbreakable encryption. Perpetual storage.
+          <p className="inline-flex  bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-xl text-slate-500 dark:text-transparent">
+            Open-source. Unbreakable encryption. Infinite storage.
           </p>
         </div>
 
@@ -45,8 +48,7 @@ function App() {
               </h2>
               <p className="text-gray-500 sm:text-xl dark:text-gray-400">
                 Infr is an open-source tool for storing, analysing and querying
-                everything you&apos;ve ever seen, heard or said. It runs quitely
-                in the background.
+                everything you&apos;ve ever seen, heard or said.
               </p>
             </div>
             <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">

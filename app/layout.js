@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
 export const metadata = {
-  title: 'Infr',
+  title: 'Infr | Database for your memories',
   description: 'Machine readable catalog of everything about you.',
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         `}
       </Script>
       <body className={inter.className} suppressHydrationWarning={true}>
-        <div className="bg-black">
+        <div>
           <div className="mx-auto flex min-h-screen flex-col px-4">
             <Header />
             <main className="flex-1">{children}</main>

@@ -4,17 +4,15 @@ import {
   DiscordLogoIcon,
   GitHubLogoIcon,
   TwitterLogoIcon,
-  DownloadIcon,
-  RocketIcon,
 } from '@radix-ui/react-icons';
 
 const Header = () => {
   return (
     <div className="item-center px-10">
       <header className="flex  items-center justify-between py-8">
-        <Link href="https://getinfr.com">
+        <Link href="https://getinfr.com" className='w-8 h-8 flex'>
           <Image
-            src="/infr-logo.svg"
+            src="/infr.png"
             alt="Infr Logo"
             width={100}
             height={24}
@@ -24,15 +22,15 @@ const Header = () => {
 
         <nav className="flex gap-6 items-center">
           <a
-            href="https://server.getinfr.com"
+            href="https://getinfr.com/studio"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex "
+            className="inline-flex dark:text-white text-slate-500"
           >
-            <RocketIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-white"  />
+            Studio
           </a>
-          <a href="/download" className="inline-flex mr-7">
-            <DownloadIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-white" />
+          <a href="/download" className="inline-flex mr-7 dark:text-white text-slate-500">
+            Download
           </a>
           <a
             href="https://twitter.com/infrhq"
