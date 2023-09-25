@@ -49,27 +49,34 @@ function Join() {
   };
 
   return (
-    <div className="flex align-center items-center justify-center ">
-      {!success && (
-        <input
-          className="mr-2 border-1 block h-12 w-1/2 rounded-md border border-double border-slate-800 border-transparent bg-origin-border px-3 py-2 text-slate-500 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:outline-none"
-          placeholder="Enter your email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      )}
-      <button
-        className={
-          'transition-background inline-flex h-12 items-center justify-center rounded-md bg-gradient-to-r from-slate-100 via-[#c7d2fe] to-[#8678f9] bg-[length:200%_200%] bg-[0%_0%] px-6 font-medium text-black duration-500 hover:bg-[100%_200%] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50' +
-          (loading ? ' opacity-50 cursor-not-allowed' : '')
-        }
-        onClick={handleSubmit}
-        disabled={loading}
-      >
-        {loading && <Loader />}
-        {btnText}
-      </button>
+    <div>
+      <div className="flex align-center items-center justify-center ">
+        {!success && (
+          <input
+            className="mr-2 border-1 block h-12 w-1/2 rounded-md border border-double border-slate-800 border-transparent bg-origin-border px-3 py-2 text-slate-500 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:outline-none"
+            placeholder="Enter your email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        )}
+        <button
+          className={
+            'transition-background inline-flex h-12 items-center justify-center rounded-md bg-gradient-to-r from-slate-100 via-[#c7d2fe] to-[#8678f9] bg-[length:200%_200%] bg-[0%_0%] px-6 font-medium text-black duration-500 hover:bg-[100%_200%] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50' +
+            (loading ? ' opacity-50 cursor-not-allowed' : '')
+          }
+          onClick={handleSubmit}
+          disabled={loading}
+        >
+          {loading && <Loader />}
+          {btnText}
+        </button>
+      </div>
+      <div className="relative z-0 mx-auto max-w-3xl pb-12 pt-6 text-center absolute h-full w-full">
+        <p className="inline-flex  bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-xl text-slate-500 dark:text-transparent">
+          Open-source. Unbreakable encryption. Infinite storage.
+        </p>
+      </div>
     </div>
   );
 }

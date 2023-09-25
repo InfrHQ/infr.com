@@ -7,11 +7,11 @@ export async function GET(req) {
   const email = url.searchParams.get('email');
   
   // Store email
-  await fetch('https://i.getinfr.com/api/join', {
+  await fetch(`${process.env.INFR_SERVER_HOST}/api/join`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Infr-Email-Secret': process.env.INFR_EMAIL_SECRET,
+      'Infr-Admin-Secret': process.env.INFR_ADMIN_SECRET,
     },
     body: JSON.stringify({ template_data: { email_id: email } }),
   });

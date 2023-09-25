@@ -1,8 +1,9 @@
 import Image from "next/image";
 
 
-function Footer2() {
+function Footer() {
   return (
+    <div className="dark:bg-gray-900">
     <footer className=" rounded-lg shadow m-4">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
@@ -52,7 +53,8 @@ function Footer2() {
         </span>
       </div>
     </footer>
+    </div>
   );
 }
 
-export default Footer2;
+export default Footer;

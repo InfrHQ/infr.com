@@ -4,6 +4,7 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'] });
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { Providers } from './providers';
 
 export const metadata = {
   title: 'Infr | Database for your memories',
@@ -14,7 +15,7 @@ const GTM_ID = process.env.GTM_ID;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning>
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -24,14 +25,17 @@ export default function RootLayout({ children }) {
         })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
-      <body className={inter.className} suppressHydrationWarning={true}>
-        <div>
-          <div className="mx-auto flex min-h-screen flex-col px-4">
-            <Header />
-            <main className="flex-1">{children}</main>
+
+      <body className={inter.className} suppressHydrationWarning={true} >
+        <Providers >
+          <div className='dark:bg-gray-900'>
+            <div className="mx-auto flex min-h-screen flex-col px-4">
+              <Header />
+              <main className="flex-1">{children}</main>
+            </div>
+          <Footer />
           </div>
-        </div>
-        <Footer />
+        </Providers>
       </body>
     </html>
   );

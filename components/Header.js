@@ -5,12 +5,13 @@ import {
   GitHubLogoIcon,
   TwitterLogoIcon,
 } from '@radix-ui/react-icons';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   return (
     <div className="item-center px-10">
       <header className="flex  items-center justify-between py-8">
-        <Link href="https://getinfr.com" className='w-8 h-8 flex'>
+        <Link href="/" className='w-8 h-8 flex'>
           <Image
             src="/infr.png"
             alt="Infr Logo"
@@ -21,17 +22,20 @@ const Header = () => {
         </Link>
 
         <nav className="flex gap-6 items-center">
-          <a
-            href="https://getinfr.com/studio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex dark:text-white text-slate-500"
-          >
+          <a href="/studio" className="inline-flex dark:text-white text-slate-500 hover:text-slate-700">
             Studio
           </a>
-          <a href="/download" className="inline-flex mr-7 dark:text-white text-slate-500">
+          <a href="/blog" className="inline-flex dark:text-white text-slate-500 hover:text-slate-700">
+            Blog
+          </a>
+          <a href="/changelog" className="inline-flex dark:text-white text-slate-500 hover:text-slate-700">
+            Changelog
+          </a>
+          <a href="/download" className="inline-flex mr-7 dark:text-white text-slate-500 hover:text-slate-700">
             Download
           </a>
+
+
           <a
             href="https://twitter.com/infrhq"
             target="_blank"
@@ -56,6 +60,7 @@ const Header = () => {
           >
             <DiscordLogoIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-white" />
           </a>
+          <ThemeToggle />
         </nav>
       </header>
     </div>
