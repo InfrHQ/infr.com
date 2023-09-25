@@ -44,6 +44,6 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require('flowbite-typography')],
   darkMode: 'class'
 };
