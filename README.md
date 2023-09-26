@@ -8,10 +8,11 @@ Infr is an open-source, self-hostable, machine-readable catalog of your data. It
 
 ## Features
 
-- Stream data from various sources like your phone, laptop, or social media accounts to your personal server.
-- Encryption options to secure your personal data with your own key.
-- Clean & intuitive APIs to access your data.
-- Future-proof architecture enabling the development of advanced AI applications.
+-   Stream data from various sources like your phone, laptop, or social media accounts to your personal server.
+-   Encryption options to secure your personal data with your own key.
+-   Clean & intuitive APIs to access your data.
+-   Future-proof architecture enabling the development of advanced AI applications.
+
 ## Getting Started
 
 1. Visit our website [infr](https://www.getinfr.com) and click the "Get Started" button.

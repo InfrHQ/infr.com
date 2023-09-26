@@ -36,8 +36,8 @@ Please ensure that all tests pass before submitting a pull request.
 
 Your pull requests should:
 
-- Clearly describe the problem and solution. Include the relevant issue number if applicable.
-- Be based on the main branch. If your pull request addresses a 'feature' or 'next' branch or another pull request, you should specify that.
+-   Clearly describe the problem and solution. Include the relevant issue number if applicable.
+-   Be based on the main branch. If your pull request addresses a 'feature' or 'next' branch or another pull request, you should specify that.
 
 Your pull request will be reviewed by at least one maintainer. It might be merged right away or might require some changes before it's ready to be merged.
 

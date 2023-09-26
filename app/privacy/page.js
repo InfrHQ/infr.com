@@ -4,7 +4,7 @@
 import Privacy from '../content/Privacy.mdx';
 
 const Home = () => {
-  return <Privacy />;
+    return <Privacy />;
 };
 
 export default Home;

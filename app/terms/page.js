@@ -4,7 +4,7 @@
 import Terms from '../content/Terms.mdx';
 
 const Home = () => {
-  return <Terms />;
+    return <Terms />;
 };
 
 export default Home;
