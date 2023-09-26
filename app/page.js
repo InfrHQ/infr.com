@@ -7,19 +7,19 @@ import Customers from '@/components/LandingPage/Customers';
 import Stats from '@/components/LandingPage/Stats';
 
 function App() {
-  return (
-    <div>
-      <section className='dark:bg-gray-900' >
-        <LandingHeroOne />
-        <Join />
-        <Customers />
-        <LandingHowItWorks />
-        <LandingCTAOne />
-        <Stats />
-        <LandingHowItHelps />
-      </section>
-    </div>
-  );
+    return (
+        <div>
+            <section className="dark:bg-gray-900">
+                <LandingHeroOne />
+                <Join />
+                <Customers />
+                <LandingHowItWorks />
+                <LandingCTAOne />
+                <Stats />
+                <LandingHowItHelps />
+            </section>
+        </div>
+    );
 }
 
 export default App;

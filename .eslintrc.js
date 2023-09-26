@@ -25,12 +25,13 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
-          "jsx": true
-        }
+            jsx: true,
+        },
     },
     rules: {
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off"
+        'react/react-in-jsx-scope': 'off',
+        'react/prop-types': 'off',
+        indent: ['error', 4],
     },
-    plugins: ["react"]
-}
+    plugins: ['react'],
+};
