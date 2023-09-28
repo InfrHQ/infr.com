@@ -53,7 +53,7 @@ function Join() {
             <div className="flex align-center items-center justify-center ">
                 {!success && (
                     <input
-                        className="mr-2 border-1 block h-12 w-1/2 rounded-md border border-double border-slate-800 border-transparent bg-origin-border px-3 py-2 text-slate-500 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:outline-none"
+                        className="mr-2 border-1 block h-12 w-1/2 rounded-md border border-double border-slate-300  px-3 py-2 text-slate-500 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:outline-none"
                         placeholder="Enter your email"
                         type="email"
                         value={email}

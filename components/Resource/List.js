@@ -1,7 +1,7 @@
-import BlogCard from './Card';
+import ResourceCard from './Card';
 
-async function getChangelogData() {
-    let data = await fetch(`${process.env.INFR_SERVER_HOST}/api/blog`, {
+async function getChangelogData(itemType) {
+    let data = await fetch(`${process.env.INFR_SERVER_HOST}/api/${itemType}`, {
         headers: { 'Infr-Admin-Secret': process.env.INFR_ADMIN_SECRET },
         next: { revalidate: 1800 },
     });
@@ -9,16 +9,16 @@ async function getChangelogData() {
     return json;
 }
 
-async function BlogCardList() {
-    const cards = await getChangelogData();
+async function ResourceCardList({ itemType }) {
+    const cards = await getChangelogData(itemType);
     return (
         <section className=" dark:bg-gray-900">
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div className="grid gap-8 lg:grid-cols-2">
                     {cards.map((card) => {
                         return (
-                            <BlogCard
-                                blogType={card.blogType}
+                            <ResourceCard
+                                resourceType={card.resourceType}
                                 dateCreated={card.dateCreated}
                                 name={card.name}
                                 description={card.description}
@@ -36,4 +36,4 @@ async function BlogCardList() {
     );
 }
 
-export default BlogCardList;
+export default ResourceCardList;

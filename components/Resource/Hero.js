@@ -1,4 +1,4 @@
-function BlogHero() {
+function ResourceHero({ title }) {
     return (
         <div className="relative z-0 mx-auto max-w-3xl pb-24 pt-12 text-center absolute h-full w-full">
             <div className="absolute -top-4 -z-10 flex w-full justify-center">
@@ -10,11 +10,11 @@ function BlogHero() {
                     className="mb-4 font-bold bg-gradient-to-t from-[#6d6d6d] to-[#f4f4f4] bg-clip-text text-4xl text-slate-800 md:text-5xl dark:text-transparent"
                     style={{ lineHeight: 1.5 }}
                 >
-                    Blog
+                    {title}
                 </h1>
             </div>
         </div>
     );
 }
 
-export default BlogHero;
+export default ResourceHero;

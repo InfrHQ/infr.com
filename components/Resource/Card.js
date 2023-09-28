@@ -1,17 +1,17 @@
 import { VideoIcon, FileTextIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 import { postConvertTimestamp } from '@/tools/Time';
 
-function BlogCard({ blogType, dateCreated, name, description, authorImageUrl, authorName, slug }) {
+function ResourceCard({ resourceType, dateCreated, name, description, authorImageUrl, authorName, slug }) {
     return (
         <article className="p-6 bg-white bg-opacity-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <div className="flex justify-between items-center mb-5 text-gray-500">
                 <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center  py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                    {String(blogType).toLowerCase() === 'tutorial' ? (
+                    {String(resourceType).toLowerCase() === 'vlog' ? (
                         <VideoIcon className="mr-1 w-5 h-5" />
                     ) : (
                         <FileTextIcon className="mr-1 w-5 h-5" />
                     )}
-                    {blogType}
+                    {resourceType}
                 </span>
                 <span className="text-sm">{postConvertTimestamp(dateCreated).title}</span>
             </div>
@@ -36,4 +36,4 @@ function BlogCard({ blogType, dateCreated, name, description, authorImageUrl, au
     );
 }
 
-export default BlogCard;
+export default ResourceCard;

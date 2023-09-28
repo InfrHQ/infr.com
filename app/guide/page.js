@@ -4,8 +4,8 @@ import ResourceHero from '@/components/Resource/Hero';
 function App() {
     return (
         <div>
-            <ResourceHero title={'Blog'} />
-            <ResourceCardList itemType={'blog'} />
+            <ResourceHero title={'Guides'} />
+            <ResourceCardList itemType={'guide'} />
         </div>
     );
 }
