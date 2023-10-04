@@ -85,15 +85,6 @@ function NavigationMenuDemo() {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/studio" legacyBehavior passHref>
-                        <NavigationMenuLink
-                            className={cn(navigationMenuTriggerStyle(), 'bg-transparent text-black dark:text-white')}
-                        >
-                            Studio
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
                     <Link href="/download" legacyBehavior passHref>
                         <NavigationMenuLink
                             className={cn(navigationMenuTriggerStyle(), 'bg-transparent text-black dark:text-white')}
