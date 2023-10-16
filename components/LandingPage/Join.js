@@ -39,11 +39,11 @@ function Join() {
         }
 
         setLoading(true);
-        //const res = await fetch('/api/waitlist?email=' + email);
+        await fetch('/api/waitlist?email=' + email);
         // Wiat for 5 seconds
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        //await new Promise((resolve) => setTimeout(resolve, 5000));
         setLoading(false);
-        setBtnText('You are in. Welcome to the future.');
+        setBtnText("You're on the waitlist. Welcome to the future.");
         setEmail('');
         setSuccess(true);
     };
@@ -53,8 +53,8 @@ function Join() {
             <div className="flex align-center items-center justify-center ">
                 {!success && (
                     <input
-                        className="mr-2 border-1 block h-12 w-1/2 rounded-md border border-double border-slate-300  px-3 py-2 text-slate-500 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:outline-none"
-                        placeholder="Enter your email"
+                        className="mr-2 border-1 block h-12 w-1/2 rounded-md border border-double border-slate-300  px-3 py-2 text-slate-500 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:outline-none dark:text-slate-200"
+                        placeholder="Enter your email & sign up for the waitlist"
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
