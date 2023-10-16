@@ -7,8 +7,26 @@ import Header from '@/components/Header';
 import { Providers } from './providers';
 
 export const metadata = {
-    title: 'Infr | Database for your memories',
+    title: {
+        default: 'Infr | Database for your memories',
+        template: '%s | Infr',
+    },
     description: 'Machine readable catalog of everything about you.',
+    keywords: ['Infr', 'OSS', 'Open Source', 'Free'],
+    openGraph: {
+        title: 'Infr | Database for your memories',
+        description: 'Machine readable catalog of everything about you.',
+        url: 'https://infrhq.com',
+        type: 'website',
+        images: [
+            {
+                url: 'https://res.cloudinary.com/dcwz20wdd/image/upload/q_auto:eco/v1697466380/infr_is8ete.png',
+                width: 1920,
+                height: 1080,
+                alt: 'Infr | Database for your memories',
+            },
+        ],
+    },
 };
 
 const GTM_ID = process.env.GTM_ID;

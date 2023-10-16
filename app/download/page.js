@@ -1,6 +1,10 @@
 import DownloadHero from '@/components/Download/Hero';
 import DesktopDownloadCard from '@/components/Download/DownloadDesktopCard';
 
+export const metadata = {
+    title: 'Download ',
+};
+
 function App() {
     return (
         <div>

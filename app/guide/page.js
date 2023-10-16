@@ -1,6 +1,8 @@
 import ResourceCardList from '@/components/Resource/List';
 import ResourceHero from '@/components/Resource/Hero';
-
+export const metadata = {
+    title: 'Guide ',
+};
 function App() {
     return (
         <div>
