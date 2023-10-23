@@ -42,7 +42,7 @@ function LandingHowItWorks() {
                         <h3 className="mb-2 text-xl font-bold dark:text-white">Battery Friendly</h3>
                         <p className="text-gray-500 dark:text-gray-400">
                             Infr is designed to be battery friendly and only syncs when you&apos;re on WiFi. A continous
-                            run for a full day only uses 0.3% of you batter per hour.
+                            run for a full day only uses 0.3% of you battery per hour.
                         </p>
                     </div>
                 </div>

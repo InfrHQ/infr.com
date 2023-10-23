@@ -15,6 +15,8 @@ import {
 } from '@/components/ui/navigation-menu';
 import { CookieIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
+import useWidth from '@/lib/hooks/useWidth';
+import useIsMac from '@/lib/hooks/useIsMac';
 
 const ListItem = React.forwardRef(({ className, title, children, ...props }, ref) => {
     return (
@@ -39,6 +41,8 @@ const ListItem = React.forwardRef(({ className, title, children, ...props }, ref
 ListItem.displayName = 'ListItem';
 
 function NavigationMenuDemo() {
+    const pageWidth = useWidth();
+    const isMac = useIsMac();
     return (
         <NavigationMenu>
             <NavigationMenuList>
@@ -84,55 +88,69 @@ function NavigationMenuDemo() {
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/download" legacyBehavior passHref>
-                        <NavigationMenuLink
-                            className={cn(navigationMenuTriggerStyle(), 'bg-transparent text-black dark:text-white')}
-                        >
-                            Download
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
+
+                {pageWidth > 768 && isMac && (
+                    <NavigationMenuItem>
+                        <Link href="/download" legacyBehavior passHref>
+                            <NavigationMenuLink
+                                className={cn(
+                                    navigationMenuTriggerStyle(),
+                                    'bg-transparent text-black dark:text-white'
+                                )}
+                            >
+                                Download
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                )}
             </NavigationMenuList>
         </NavigationMenu>
     );
 }
 
+const SocialIcons = () => {
+    return (
+        <div className="flex items-center justify-center gap-4 text-center">
+            {' '}
+            <a
+                href="https://twitter.com/infrhq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex md:mb-0"
+            >
+                <TwitterLogoIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-black dark:hover:text-white" />
+            </a>
+            <a
+                href="https://github.com/InfrHQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex  md:mb-0"
+            >
+                <GitHubLogoIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-black dark:hover:text-white" />
+            </a>
+            <a
+                href="https://discord.gg/ZAejZCzaPe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex md:mb-0"
+            >
+                <DiscordLogoIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-black dark:hover:text-white" />
+            </a>
+        </div>
+    );
+};
+
 const Header = () => {
     return (
-        <div className="item-center px-10">
-            <header className="flex  items-center justify-between py-8">
-                <Link href="/" className="w-8 h-8 flex">
+        <div className="item-center px-4 md:px-10">
+            <header className="flex flex-wrap items-center justify-between py-4 md:py-8">
+                <Link href="/" className="w-8 h-8 flex mb-4 md:mb-0">
                     <Image src="/infr.png" alt="Infr Logo" width={100} height={24} priority />
                 </Link>
-
-                <nav className="flex gap-6 items-center">
+                <nav className="flex flex-wrap gap-2 md:gap-6 items-center">
                     <NavigationMenuDemo />
-                    <a
-                        href="https://twitter.com/infrhq"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex"
-                    >
-                        <TwitterLogoIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-black dark:hover:text-white" />
-                    </a>
-                    <a
-                        href="https://github.com/InfrHQ"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex"
-                    >
-                        <GitHubLogoIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-black dark:hover:text-white" />
-                    </a>
-                    <a
-                        href="https://discord.gg/ZAejZCzaPe"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex"
-                    >
-                        <DiscordLogoIcon className="h-6 w-6 text-slate-400 transition-colors hover:text-black dark:hover:text-white" />
-                    </a>
                     <ThemeToggle />
+                    <SocialIcons />
                 </nav>
             </header>
         </div>
