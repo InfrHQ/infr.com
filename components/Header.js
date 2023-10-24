@@ -1,5 +1,6 @@
 'use client';
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { DiscordLogoIcon, GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
@@ -39,10 +40,30 @@ const ListItem = React.forwardRef(({ className, title, children, ...props }, ref
 });
 
 ListItem.displayName = 'ListItem';
+async function checkOS(n) {
+    if (n.userAgentData) {
+        const hints = ['architecture', 'model', 'platform', 'platformVersion', 'uaFullVersion'];
+        return n.userAgentData.getHighEntropyValues(hints);
+    } else {
+        console.log(n.userAgent);
+        return 'navigator.userAgentData is not supported!';
+    }
+}
 
 function NavigationMenuDemo() {
     const pageWidth = useWidth();
     const isMac = useIsMac();
+    const [macArch, setMacArch] = useState(false);
+
+    async function getMacArch() {
+        const arch = await checkOS(navigator);
+        setMacArch(arch);
+    }
+
+    useEffect(() => {
+        getMacArch();
+    }, []);
+
     return (
         <NavigationMenu>
             <NavigationMenuList>
@@ -91,16 +112,17 @@ function NavigationMenuDemo() {
 
                 {pageWidth > 768 && isMac && (
                     <NavigationMenuItem>
-                        <Link href="/download" legacyBehavior passHref>
-                            <NavigationMenuLink
-                                className={cn(
-                                    navigationMenuTriggerStyle(),
-                                    'bg-transparent text-black dark:text-white'
-                                )}
-                            >
-                                Download
-                            </NavigationMenuLink>
-                        </Link>
+                        <a
+                            href={
+                                macArch?.architecture === 'arm'
+                                    ? 'https://i.getinfr.com/desktop-app/latest/Infr_aarch64.dmg'
+                                    : 'https://i.getinfr.com/desktop-app/latest/Infr_x64.dmg'
+                            }
+                            download="Infr.dmg"
+                            className={cn(navigationMenuTriggerStyle(), 'bg-transparent text-black dark:text-white')}
+                        >
+                            Download
+                        </a>
                     </NavigationMenuItem>
                 )}
             </NavigationMenuList>
