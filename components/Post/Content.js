@@ -158,6 +158,8 @@ async function PostContent({ slug }) {
                             return <Table key={index} head={item.head} body={item.body} />;
                         case 'br':
                             return <br key={index} />;
+                        case 'hr':
+                            return <hr key={index} />;
                         default:
                             return null;
                         }
