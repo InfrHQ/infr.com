@@ -13,7 +13,7 @@ function Stats() {
                         <dt className="mb-2 text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-slate-300">
                             1T+
                         </dt>
-                        <dd className="font-light text-slate-500 dark:text-gray-400">GB of data</dd>
+                        <dd className="font-light text-slate-500 dark:text-gray-400">bytes of data</dd>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <dt className="mb-2 text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-slate-300">
